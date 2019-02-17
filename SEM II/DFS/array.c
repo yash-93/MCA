@@ -5,8 +5,11 @@ int main(){
     int *ar, size, pos, ele, c, i=0;
     char ch;
     printf("Enter the size of the array : ");
-    scanf("%d", &   size);
+    scanf("%d", &size);
     ar = (int*)malloc(size * sizeof(int*));
+    for(int j = 0; j < size; j++){
+        ar[j] = 0;
+    }
     printf("MENU\n");
     printf("1. Insert\n");
     printf("2. Delete\n");
@@ -40,8 +43,9 @@ int main(){
         case '3':
             printf("Resultant array : ");
             for(c = 0; c < size; c++){
-                printf("%d", ar[c]);
+                printf("%d ", ar[c]);
             }
+            printf("\n");
             break;
 
         case '4':
