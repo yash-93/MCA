@@ -34,23 +34,34 @@ int main(){
             printf("Enter your choice : ");
             scanf("%d", &choice1);
             switch(choice1){
-            case 1:insertBeg();
+            case 1:
+                insertBeg();
+                break;
 
-            case 2:insertEnd();
+            case 2:
+                insertEnd();
+                break;
 
-            case 3:insertAtPos();
-
+            case 3:
+                insertAtPos();
+                break;
             }
 
         case 2:
             printf("Enter your choice : ");
             scanf("%d", &choice2);
             switch(choice2){
-            case 1:deleteBeg();
+            case 1:
+                deleteBeg();
+                break;
 
-            case 2:deleteEnd();
+            case 2:
+                deleteEnd();
+                break;
 
-            case 3:deleteAtPos();
+            case 3:
+                deleteAtPos();
+                break;
 
             }
 
