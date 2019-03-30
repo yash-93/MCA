@@ -42,10 +42,6 @@ public:
         Distance(feet, inches);
     }
 
-    void area(){
-
-    }
-
     void showDistance(){
         cout<<"Distance is " << feet << "\'" << inches << "\"" << endl;
     }
@@ -61,12 +57,12 @@ public:
 };
 
 int main(){
-   /* int n1, n2, m1, m2;
+    int n1, n2, m1, m2;
     cout << "Enter first distance : ";
     cin >> n1 >> n2;
     cout << "Enter second distance : ";
-    cin >> m1 >> m2;*/
-    Distance d3, d4, d1(2,3), d2(5,6);
+    cin >> m1 >> m2;
+    Distance d3, d4, d1(n1,n2), d2(m1,m2);
     d1.showDistance();
     d2.showDistance();
     d3.addDistance(d1, d2);
