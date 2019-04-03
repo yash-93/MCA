@@ -129,7 +129,7 @@ void insertEnd(int data){
     struct Node* temp = NULL;
     newNode->data = data;
     newNode->next = NULL;
-
+    temp = head;
     if(head == NULL){
         head = newNode;
     }else{
