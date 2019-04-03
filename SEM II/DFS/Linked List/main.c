@@ -15,7 +15,7 @@ void deleteAtPos();
 void display(struct Node* ptr);
 
 int main(){
-    int choice, choice1, choice2, val, pos;
+    int choice, choice1, choice2, val;
     head = NULL;
     printf("\tMENU\n\n");
     printf("1. Insert\n\t1.1 At Front\n\t1.2 At End\n\t1.3 In Between");
@@ -49,7 +49,7 @@ int main(){
             case 3:
             	//printf("Enter the position where you want to insert : ");
             	//scanf("%d", &pos);
-                insertAtPos(data);
+                insertAtPos(val);
                 break;
             }
             break;
@@ -59,15 +59,15 @@ int main(){
             scanf("%d", &choice2);
             switch(choice2){
             case 1:
-                //deleteBeg();
+                deleteBeg();
                 break;
 
             case 2:
-                //deleteEnd();
+                deleteEnd();
                 break;
 
             case 3:
-                //deleteAtPos();
+                deleteAtPos();
                 break;
 
             }
@@ -103,7 +103,7 @@ void insertBeg(int data){
 }
 
 void insertAtPos(int data){
-	int loc = 0;;
+	int loc = 0, pos;
 	struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
 	newNode->data = data;
 	struct Node* temp;
@@ -138,6 +138,32 @@ void insertEnd(int data){
         }
         temp->next = newNode;
         }
+}
+
+void deleteBeg(){
+	head = head->next;
+}
+
+void deleteEnd(){
+	struct Node* ptr;
+	ptr = head;
+	while((ptr->next)->next != NULL){
+		ptr = ptr->next;
+	}
+	ptr->next = NULL;
+}
+
+void deleteAtPos(){
+	int pos, loc = 1;
+	struct Node* temp;
+	temp = head;
+	printf("Enter the position from where you want to delete : ");
+	scanf("%d", &pos);
+	while(loc < (pos-1)){
+    	temp = temp->next;
+    	loc += 1;
+	}
+	temp->next = (temp->next)->next;
 }
 
 void display(struct Node* head){
