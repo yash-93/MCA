@@ -8,7 +8,7 @@ struct Node{
 
 void insertBeg(int data);
 void insertEnd(int data);
-void insertAtPos();
+void insertAtPos(int data);
 void deleteBeg();
 void deleteEnd();
 void deleteAtPos();
@@ -17,6 +17,8 @@ void display(struct Node* ptr);
 int main(){
     int choice, choice1, choice2, val;
     head = NULL;
+    while(1)
+    {
     printf("\tMENU\n\n");
     printf("1. Insert\n\t1.1 At Front\n\t1.2 At End\n\t1.3 In Between");
     printf("\n\n");
@@ -26,8 +28,7 @@ int main(){
     printf("\n\n");
     printf("4. Exit");
     printf("\n\n");
-    while(1)
-    {
+
         printf("Enter your choice : ");
         scanf("%d", &choice);
 
@@ -47,7 +48,7 @@ int main(){
                 break;
 
             case 3:
-                //insertAtPos();
+                insertAtPos(val);
                 break;
             }
             break;
@@ -105,7 +106,7 @@ void insertEnd(int data){
     struct Node* temp = NULL;
     newNode->data = data;
     newNode->next = NULL;
-
+    temp = head;
     if(head == NULL){
         head = newNode;
     }else{
@@ -114,6 +115,56 @@ void insertEnd(int data){
         }
         temp->next = newNode;
         }
+        printf("\n\n");
+}
+
+void insertAtPos(int data){
+	int loc = 0, pos;
+	struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+	newNode->data = data;
+	struct Node* temp;
+	if(head == NULL){
+		newNode->next = NULL;
+		head = newNode;
+	}
+	else{
+	temp = head;
+	printf("Enter the position where you want to insert : ");
+    scanf("%d", &pos);
+    while(loc < pos){
+    	temp = temp->next;
+    	loc += 1;
+	}
+	newNode->next = temp->next;
+	temp->next = newNode;
+	}
+	printf("\n\n");
+}
+
+void deleteBeg(){
+	head = head->next;
+}
+
+void deleteEnd(){
+	struct Node* ptr;
+	ptr = head;
+	while((ptr->next)->next != NULL){
+		ptr = ptr->next;
+	}
+	ptr->next = NULL;
+}
+
+void deleteAtPos(){
+	int pos, loc = 1;
+	struct Node* temp;
+	temp = head;
+	printf("Enter the position from where you want to delete : ");
+	scanf("%d", &pos);
+	while(loc < (pos-1)){
+    	temp = temp->next;
+    	loc += 1;
+	}
+	temp->next = (temp->next)->next;
 }
 
 void display(struct Node* head){
