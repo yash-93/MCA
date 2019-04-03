@@ -8,14 +8,14 @@ struct Node{
 
 void insertBeg(int data);
 void insertEnd(int data);
-void insertAtPos();
+void insertAtPos(int data);
 void deleteBeg();
 void deleteEnd();
 void deleteAtPos();
 void display(struct Node* ptr);
 
 int main(){
-    int choice, choice1, choice2, val;
+    int choice, choice1, choice2, val, pos;
     head = NULL;
     printf("\tMENU\n\n");
     printf("1. Insert\n\t1.1 At Front\n\t1.2 At End\n\t1.3 In Between");
@@ -47,7 +47,9 @@ int main(){
                 break;
 
             case 3:
-                //insertAtPos();
+            	//printf("Enter the position where you want to insert : ");
+            	//scanf("%d", &pos);
+                insertAtPos(data);
                 break;
             }
             break;
@@ -98,6 +100,28 @@ void insertBeg(int data){
         newNode->next = temp;
     }
     printf("\n\n");
+}
+
+void insertAtPos(int data){
+	int loc = 0;;
+	struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+	newNode->data = data;
+	struct Node* temp;
+	if(head == NULL){
+		newNode->next = NULL;
+		head = newNode;
+	}
+	else{
+	temp = head;
+	printf("Enter the position where you want to insert : ");
+    scanf("%d", &pos);
+    while(loc < pos){
+    	temp = temp->next;
+    	loc += 1;
+	}
+	newNode->next = temp->next;
+	temp->next = newNode;
+	}
 }
 
 void insertEnd(int data){
