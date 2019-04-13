@@ -14,21 +14,21 @@ int isFull(){
         return 0;
 }
 
-void push(int data){
+void push(char ch){
     if(!isFull()){
         top += 1;
-        stackArr[top] = data;
+        stackArr[top] = ch;
     }else{
         printf("Could not insert data, Stack is full");
     }
 }
 
 int pop(){
-    int data;
+    int ch;
     if(!isEmpty()){
-        data = stackArr[top];
+        ch = stackArr[top];
         top -= 1;
-        return data;
+        return ch;
     }else{
         printf("Could not retrieve data, Stack is empty");
     }

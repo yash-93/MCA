@@ -53,7 +53,7 @@ int main(){
             break;
 
         case 2:
-            printf("Enter your choice : ");
+            printf("From where you want to delete   : ");
             scanf("%d", &choice2);
             switch(choice2){
             case 1:
