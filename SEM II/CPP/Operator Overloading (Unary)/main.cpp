@@ -3,7 +3,7 @@
 using namespace std;
 
 class Increment {
-    int x,y;
+    int x, y;
 
 public:
     void getdata(int a, int b){
