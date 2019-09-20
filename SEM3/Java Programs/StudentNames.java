@@ -1,11 +1,12 @@
 import java.util.Scanner;
 import java.lang.String;
+import java.lang.Math;
 
 public class StudentNames{
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter the number of students : ");
-		int num = input.nextInt();
+    	int num = Integer.parseInt(input.nextLine());
 		int pos = 0;
 		String[] names = new String[num];
 		String[] sorted = new String[num];
@@ -14,13 +15,19 @@ public class StudentNames{
 			names[i] = input.nextLine();
 		}
 
-		//for (int i = 1; i <= num; i++) {
-			//for (int j = i+1; j <= num; i++) {
-				//if( (int)names[i].charAt(pos) >  (int)names[j].charAt(pos) ) {
+		for (int i = 0; i < num-1; i++) {
+			for (int j = i+1; j < names.length; j++) {
+				if(names[i].compareTo(names[j])>0) {
+	               String temp = names[i];
+	               names[i] = names[j];
+	               names[j] = temp;
+	            }
+			}
+		}
+		System.out.println("SORTED STRING ARRAY")
 
-				//}
-			//}
-		//}
-		System.out.print(names[1].charAt(pos));
+		for (int i = 0; i < num; i++) {
+			System.out.println(names[i]);
+		}
 	}
 }
