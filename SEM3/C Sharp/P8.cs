@@ -2,9 +2,8 @@
 
 namespace Practicals
 {
-	class EnglishDistance{
-		private float feet;
-		private float inches, i;
+	class EDtoMD{
+		private float feet, inches, i, m, cm;
 
 		public float Inches{
 			get{ 
@@ -32,11 +31,6 @@ namespace Practicals
 				}
 			}
 		}
-	}
-
-	class MetricDistance{
-		private float m;
-		private float cm;
 
 		public float M{
 			get{ 
@@ -66,20 +60,17 @@ namespace Practicals
 			Console.Write("Enter inches : ");
 			inches = Convert.ToInt32(Console.ReadLine ());
 
-			EnglishDistance ed = new EnglishDistance();
+			EDtoMD ed = new EDtoMD();
 			ed.Inches = inches;
 			ed.Feet = feet;
-
-			MetricDistance md = new MetricDistance();
-			md.CM = ed.Inches;
-			md.M = ed.Feet;
+			ed.CM = ed.Inches;
+			ed.M = ed.Feet;
 
 			Console.Write ("English Distance : ");
 			Console.WriteLine (ed.Feet + "'" + ed.Inches + "\"");
 			Console.Write ("Metric Distance : ");
-			Console.WriteLine (md.M + "m");
+			Console.WriteLine (ed.M + "m");
 
 		}
 	}
 }
-
