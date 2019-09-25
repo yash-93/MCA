@@ -14,5 +14,6 @@ class RandomIntegers{
 			int num = rand.nextInt((max - min) + 1) + min;
 			System.out.print(num + " ");
 		}
+		System.out.print("\n");
 	}
 }
