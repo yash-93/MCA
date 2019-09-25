@@ -23,9 +23,11 @@ public class StudentNames{
 	               names[j] = temp;
 	            }
 			}
+		
 		}
-		System.out.println("SORTED STRING ARRAY")
-
+		System.out.println();
+		System.out.println("SORTED STRING ARRAY : ");
+		System.out.println();
 		for (int i = 0; i < num; i++) {
 			System.out.println(names[i]);
 		}
