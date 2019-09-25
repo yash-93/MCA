@@ -6,7 +6,7 @@ class MaxMin{
 		System.out.print("Enter number of integers : ");
 		int len = input.nextInt();
 		int[] arr = new int[len];
-		System.out.println("Enter " + len + " integers : ");
+		System.out.print("Enter " + len + " integers : ");
 		
 		for(int i = 0; i < len; i++)
 		{
