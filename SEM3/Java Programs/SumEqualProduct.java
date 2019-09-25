@@ -8,7 +8,7 @@ class SumEqualProduct{
 				mul *= n%10;
 			}
 			if(sum == mul){
-				System.out.println("Smallest number with equal sum and product is : " + nums);
+				System.out.println("Smallest 3 digit number with equal sum and product is : " + nums);
 				break;
 			} else {
 				sum = 0;
@@ -23,7 +23,7 @@ class SumEqualProduct{
 				mul *= n%10;
 			}
 			if(sum == mul){
-				System.out.println("Biggest number with equal sum and product is : " + numl);
+				System.out.println("Biggest 3 digit number with equal sum and product is : " + numl);
 				break;
 			} else {
 				sum = 0;
