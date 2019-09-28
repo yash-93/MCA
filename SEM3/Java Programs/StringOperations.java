@@ -70,19 +70,37 @@ class StringOperations{
 						break;
 
 			case '4':	input.nextLine();
-						int j = 0;
+						int j, p;
+						flag = true;
 						System.out.print("Enter sub-string : ");
 						str2 = input.nextLine();
 						for (int i = 0; i <= (str.length()-str2.length()); i++) {
-							while(j < str2.length()){
-								//if(str2[j] == str[i]){
 
-								//}
-								//else{
-									
-								//}
+							p = i;
+							j = 0;
+
+							while(j < str2.length()){ 
+
+								if(str.charAt(p) != str2.charAt(j)){
+									flag = false;
+									break;
+								}
+								else
+								{
+									flag = true;
+								}
+
+								j++;
+								p++;
+							}
+							if (j == str2.length()) {
+								break;
 							}
 						}
+						if(flag)
+								System.out.println("Substring exist");
+							else
+								System.out.println("Substring does not exist");
 						System.out.println();
 						break;
 
