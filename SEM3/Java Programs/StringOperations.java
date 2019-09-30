@@ -1,8 +1,6 @@
 import java.util.Scanner;
 import java.lang.String;
 
-
-
 class StringOperations{
 
 	static String revStr(String str){
