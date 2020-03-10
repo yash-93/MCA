@@ -14,6 +14,12 @@ int main()
         cin >> ar[i];
     }
     // selectionSort(ar, len);
-    bubbleSorted(ar, len);
+    // bubbleSorted(ar, len);
+    // insertionSort(ar, len);
+    // quickSort(ar, 0, len);
+    mergeSort(ar, 0, len-1);
+    for (int i = 0; i < len; i++){
+        cout << ar[i];
+    }
     return 0;
 }
