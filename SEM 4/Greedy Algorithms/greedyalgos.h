@@ -13,3 +13,8 @@ struct Job{
 };
 
 void jobSequencing(Job arr[], int n);
+
+//Prims Algorithm
+#define V 5
+void primsMST(int graph[V][V]);
+
