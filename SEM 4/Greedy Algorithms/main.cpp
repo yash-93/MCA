@@ -25,12 +25,21 @@ int main()
     cout << "Max profit sequence of jobs : ";
     jobSequencing(arr, n);*/
 
+    /* Prims
     int graph[V][V] = { { 0, 2, 0, 6, 0 },
-                            { 2, 0, 3, 8, 5 },
-                            { 0, 3, 0, 0, 7 },
-                            { 6, 8, 0, 0, 9 },
-                            { 0, 5, 7, 9, 0 } };
-    primsMST(graph);
+                        { 2, 0, 3, 8, 5 },
+                        { 0, 3, 0, 0, 7 },
+                        { 6, 8, 0, 0, 9 },
+                        { 0, 5, 7, 9, 0 } };
+    primsMST(graph);*/
+
+    /* Dijkstra */
+    int graph[V][V] = { { 0, 2, 0, 6, 0 },
+                        { 2, 0, 3, 8, 5 },
+                        { 0, 3, 0, 0, 7 },
+                        { 6, 8, 0, 0, 9 },
+                        { 0, 5, 7, 9, 0 } };
+    dijkstra(graph, 0);
 
     return 0;
 }

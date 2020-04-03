@@ -20,3 +20,5 @@ void primsMST(int graph[V][V]);
 
 //Kruskals Algorithm
 
+//Dijkstra Algorithm
+void dijkstra(int graph[V][V], int src);
