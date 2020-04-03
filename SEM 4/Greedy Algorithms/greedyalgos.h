@@ -18,3 +18,5 @@ void jobSequencing(Job arr[], int n);
 #define V 5
 void primsMST(int graph[V][V]);
 
+//Kruskals Algorithm
+
