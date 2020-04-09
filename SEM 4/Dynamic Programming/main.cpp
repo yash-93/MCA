@@ -4,10 +4,12 @@ using namespace std;
 
 int main()
 {
-    int num;
+    /*int num;
     cout << "Enter the positive integer : ";
     cin >> num;
-    cout << fib(num);
+    cout << fib(num);*/
+
+    MultiStageGraph();
 
     return 0;
 }
