@@ -9,7 +9,6 @@ int main()
     cin >> num;
     cout << fib(num);*/
 
-    MultiStageGraph();
-
+    cout << MultiStageGraph();
     return 0;
 }

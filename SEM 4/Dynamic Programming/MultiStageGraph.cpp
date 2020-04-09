@@ -1,41 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void MultiStageGraph(){
-    int stages = 4, min_val;
+#define n 8
+#define INF INT_MAX
+
+int MultiStageGraph(){
+    /*int stages = 4, min_val = 1234;
     int n = 8;
-    int cost[n+1], d[n+1], path[stages];
-    int C[n+1][n+1] = { {0,0,0,0,0,0,0,0,0},
-                        {0,0,2,1,3,0,0,0,0},
-                        {0,0,0,0,0,2,3,0,0},
-                        {0,0,0,0,0,6,7,0,0},
-                        {0,0,0,0,0,6,8,9,0},
-                        {0,0,0,0,0,0,0,0,6},
-                        {0,0,0,0,0,0,0,0,4},
-                        {0,0,0,0,0,0,0,0,5},
-                        {0,0,0,0,0,0,0,0,0} };
+    int cost[n+1], d[n+1], path[stages];*/
 
-    cost[n] = 0;
+    int dist[n];
+    int graph[n][n] =
+      {{INF, 2, 1,3, INF, INF, INF, INF},
+       {INF, INF, INF, INF, 2, 3, INF, INF},
+       {INF, INF, INF, INF, 6, 7, INF, INF},
+       {INF, INF, INF, INF, 6, 8, 9, INF},
+       {INF, INF, INF, INF, INF, INF, INF, 6},
+       {INF, INF, INF, INF, INF, INF, INF, 4},
+       {INF, INF, INF, INF, INF, INF, INF, 5}};
 
-    for(int i=n-1; i>=1; i--){
-        min_val = 32767;
-        for (int k=n-1; k<=n; k++){
-            if (C[i][k]!=0 && C[i][k]+cost[k] < min_val){
-                min_val = C[i][k]+cost[k];
-                d[i] = k;
+    dist[n-1] = 0;
+
+    for(int i=n-2; i>=0; i--){
+        dist[i] = INF;
+        for (int j=i; j<n; j++){
+            if (graph[i][j] == INF){
+                continue;
             }
+            dist[i] = min(dist[i], graph[i][j]+dist[j]);
         }
-        cost[i] = min_val;
     }
-
-    path[1] = 1;
-    path[stages] = n;
-    for (int i=2; i<stages; i++){
-        path[i] = d[path[i-1]];
-    }
-
-    for (int i=1; i<=stages; i++){
-        cout << path[i] << " ";
-    }
-
+    return dist[0];
 }
