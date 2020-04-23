@@ -6,4 +6,5 @@ int MultiStageGraph();
 #define INF 99999
 void FloydWarshall(int graph[V][V]);
 
-int matChainMul();
+#define N 5
+int MatrixChainOrder(int P[N], int size);
