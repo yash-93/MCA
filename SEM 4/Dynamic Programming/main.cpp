@@ -12,11 +12,13 @@ int main()
     //cout << MultiStageGraph();
 
 
-    int graph[V][V] = { {0, 3, INF, 7},
+    /*int graph[V][V] = { {0, 3, INF, 7},
                         {8, 0, 2, INF},
                         {5, INF, 0, 1},
                         {2, INF, INF, 0} };
-    FloydWarshall(graph);
+    FloydWarshall(graph);*/
+
+    cout << matChainMul();
 
     return 0;
 }
