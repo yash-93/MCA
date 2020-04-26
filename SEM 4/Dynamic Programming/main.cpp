@@ -18,11 +18,14 @@ int main()
                         {2, INF, INF, 0} };
     FloydWarshall(graph);*/
 
+    /*Matrixchain
     int arr[] = {5, 4, 6, 2, 7};
     int size = sizeof(arr) / sizeof(arr[0]);
 
     cout << "Minimum number of multiplications is "
-         << MatrixChainOrder(arr, size);
+         << MatrixChainOrder(arr, size);*/
 
+    //Bellman Ford
+    BellmanFord();
     return 0;
 }
