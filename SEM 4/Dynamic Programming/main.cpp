@@ -26,6 +26,10 @@ int main()
          << MatrixChainOrder(arr, size);*/
 
     //Bellman Ford
-    BellmanFord();
+    //BellmanFord();
+
+    //0/1 Knapsack
+    //zeroOneKnapsack();
+
     return 0;
 }

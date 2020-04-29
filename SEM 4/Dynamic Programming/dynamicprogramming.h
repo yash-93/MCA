@@ -10,3 +10,5 @@ void FloydWarshall(int graph[V][V]);
 int MatrixChainOrder(int P[N], int size);
 
 void BellmanFord();
+
+void zeroOneKnapsack();
